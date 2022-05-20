@@ -1,0 +1,26 @@
+<mat-sidenav-container>
+    <mat-sidenav #sidenav mode="side" [(opened)]="opened">
+        <a routerLinkActive="active" mat-button class="menu-button" routerLink="/">
+            <mat-icon aria-hidden="false">home</mat-icon>
+            Home
+        </a>        
+        <mat-divider></mat-divider>
+        <a routerLinkActive="active" mat-button class="menu-button" routerLink="/settings">
+            <mat-icon aria-hidden="false">settings</mat-icon>
+            Settings
+        </a>        
+        <mat-divider></mat-divider>
+    </mat-sidenav>
+    
+    <mat-sidenav-content>
+        
+        <mat-toolbar>
+            <button (click)="sidenav.toggle()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+             <mat-icon>menu</mat-icon>
+           </button>
+         </mat-toolbar>
+
+         <router-outlet></router-outlet>
+    </mat-sidenav-content>
+    
+</mat-sidenav-container>
