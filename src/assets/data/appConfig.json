@@ -1,0 +1,9 @@
+{
+    "name": "NG App config test",
+    "version": "1.0.0",
+    "auth": {
+        "clientId": "Enter_the_Application_Id_here",
+        "authority": "Enter_the_Cloud_Instance_Id_Here/Enter_the_Tenant_Info_Here",
+        "redirectUri": "Enter_the_Redirect_Uri_Here"
+      }
+}

@@ -10,6 +10,21 @@
             Settings
         </a>        
         <mat-divider></mat-divider>
+
+        <div>
+            <button (click)="login()" *ngIf="!isLoggedIn()">Sign In</button>
+            <button (click)="logout()" *ngIf="isLoggedIn()">Sign Out</button>
+            <div *ngIf="isLoggedIn()">
+                You are Logged in
+            </div>
+            <div *ngIf="!isLoggedIn()">
+                You are not Logged in
+            </div>
+        </div>
+
+        <div>
+            <button (click)="getClaims()">Claims</button>
+        </div>
     </mat-sidenav>
     
     <mat-sidenav-content>
@@ -22,5 +37,6 @@
 
          <router-outlet></router-outlet>
     </mat-sidenav-content>
+    
     
 </mat-sidenav-container>

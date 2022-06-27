@@ -107,6 +107,37 @@
           }
         }
       }
+    },
+    "aloe-lib": {
+      "projectType": "library",
+      "root": "projects/aloe-lib",
+      "sourceRoot": "projects/aloe-lib/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/aloe-lib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/aloe-lib/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/aloe-lib/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/aloe-lib/src/test.ts",
+            "tsConfig": "projects/aloe-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/aloe-lib/karma.conf.js"
+          }
+        }
+      }
     }
   },
   "defaultProject": "aloe-vera"
