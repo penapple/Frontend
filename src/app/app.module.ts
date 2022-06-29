@@ -18,15 +18,20 @@ import { SettingsComponent } from './settings/settings.component';
 
 import { MsalBroadcastService, MsalGuard, MsalGuardConfiguration, MsalInterceptor, MsalInterceptorConfiguration, MsalModule, MsalRedirectComponent, MsalService, MSAL_GUARD_CONFIG, MSAL_INSTANCE, MSAL_INTERCEPTOR_CONFIG } from '@azure/msal-angular';
 import { BrowserCacheLocation, InteractionType, IPublicClientApplication, LogLevel, PublicClientApplication } from '@azure/msal-browser';
-import { AppConfigService } from './services/app-config.service';
+// import { AppConfigService } from './services/app-config.service';
 import { LoginFailedComponent } from './login-failed/login-failed.component';
 
 import { msalConfig, protectedResources } from './auth-config';
 
-const appInitializerFn = (appConfig: AppConfigService) =>{
+// const appInitializerFn = (appConfig: AppConfigService) =>{
+//   return () => {
+//     console.log('app initializing');
+//     return appConfig.loadAppConfig();
+//   };
+// }
+const appInitializerFn = () =>{
   return () => {
     console.log('app initializing');
-    return appConfig.loadAppConfig();
   };
 }
 
@@ -81,7 +86,7 @@ export function MSALGuardConfigFactory(): MsalGuardConfiguration {
     HttpClientModule,
     MsalModule
   ],
-  providers: [AppConfigService,
+  providers: [//AppConfigService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: MsalInterceptor,
@@ -106,7 +111,7 @@ export function MSALGuardConfigFactory(): MsalGuardConfiguration {
     provide: APP_INITIALIZER,
     useFactory: appInitializerFn,
     multi: true,
-    deps: [AppConfigService]
+    // deps: [AppConfigService]
   }
 ],
   bootstrap: [AppComponent, MsalRedirectComponent]
