@@ -51,6 +51,5 @@ jobs:
         id: deploy-to-webapp
         with:
           app-name: 'ms3-dev-frontend'
-          slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_7B0956836A6645C0BFE35A584FD16BF7 }}
-          package: .
+          package: ./dist/aloe-vera
