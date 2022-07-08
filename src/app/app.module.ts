@@ -57,7 +57,7 @@ export function MSALInterceptorConfigFactory(): MsalInterceptorConfiguration {
 
 export function MSALGuardConfigFactory(): MsalGuardConfiguration {
   return { 
-    interactionType: InteractionType.Popup,
+    interactionType: InteractionType.Redirect,
     authRequest: {
       scopes: ['openid', 'https://penpineappleb2c.onmicrosoft.com/61bd96d7-b410-4d31-84fd-298629aefb4d/access_as_user']
     },

@@ -45,11 +45,11 @@ export class SideNavComponent implements OnInit {
           });
       }
     } else {
-      // if (this.msalGuardConfig.authRequest){
-      //   this.msalService.loginRedirect({...this.msalGuardConfig.authRequest, ...userFlowRequest} as RedirectRequest);
-      // } else {
-      //   this.msalService.loginRedirect(userFlowRequest);
-      // }
+      if (this.msalGuardConfig.authRequest){
+        this.msalService.loginRedirect({...this.msalGuardConfig.authRequest, ...userFlowRequest} as RedirectRequest);
+      } else {
+        this.msalService.loginRedirect(userFlowRequest);
+      }
       this.msalService.loginPopup().subscribe( (response: AuthenticationResult) => {
         this.msalService.instance.setActiveAccount(response.account);
       });
