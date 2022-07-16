@@ -40,7 +40,7 @@
          clientId: '24f7f270-52a9-4650-86ff-f20742fd5858', // This is the ONLY mandatory field that you need to supply.
          authority: b2cPolicies.authorities.signUpSignIn.authority, // Defaults to "https://login.microsoftonline.com/common"
          knownAuthorities: [b2cPolicies.authorityDomain], // Mark your B2C tenant's domain as trusted.
-         redirectUri: 'http://localhost:4200/', // Points to window.location.origin. You must register this URI on Azure portal/App Registration.
+         redirectUri: 'https://ms3-dev-frontend.azurewebsites.net/', // Points to window.location.origin. You must register this URI on Azure portal/App Registration.
          postLogoutRedirectUri: '/', // Indicates the page to navigate after logout.
          navigateToLoginRequestUrl: true, // If "true", will navigate back to the original request location before processing the auth code response.
      },
